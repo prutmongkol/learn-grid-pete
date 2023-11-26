@@ -11,17 +11,120 @@ font-family: 'UnifrakturMaguntia', cursive; */
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
-
+    
     /* border: 1px solid red; */
 }
 
+/* Layout */
+body {
+    background: #FFF7EB;
+}
+
+.wrapper {
+    margin: 1em auto;
+    padding: 1em;
+    width: 1080px;
+    border: 2px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    background: rgba(128, 128, 128, 0.1);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header"
+        "story ingredients ingredients"
+        "story instructions instructions"
+        "footer footer footer";
+    gap: 2em;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.story {
+    grid-area: story;
+}
+
+.ingredients {
+    grid-area: ingredients;
+}
+
+.instructions {
+    grid-area: instructions;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Styling */
 .header__title,
 .story__title {
     font-family: 'Ovo', serif;
 }
 
+.cookie_icon {
+    flex: 1 0 auto;
+    min-width: 152px;
+    /* min-height: 152px;
+    aspect-ratio: 1; */
+
+    object-fit: cover;
+}
+
+.header__title {
+    font-size: 4.5em;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    color: #514438;
+}
+
+.story__title {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    color: #514438;
+}
+
 .story__content {
     font-family: 'Ovo', serif;
     text-align: justify;
+    line-height: 22px;
 }
 
+.story__content::first-letter {
+    float: left;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 6px;
+    padding-right: 8px;
+    padding-left: 3px;
+    color: #514438;
+}
+
+.ingredients__title {
+    color: #514438;
+}
+
+.instructions__title {
+    color: #514438;
+}
+
+.img-grandma {
+    width: 150px;
+    shape-outside: url(assets/grandma.png);
+    float: right;
+}
+
+.footer {
+    text-align: center;
+}
+
+a:any-link {
+    color: black
+}
